@@ -1,5 +1,5 @@
 #### Resumé
-[![Résumé](https://raw.githubusercontent.com/mortenvester1/resume/blob/master/build/resume-public.png)](https://raw.githubusercontent.com/mortenvester1/resume/blob/master/build/resume-public.pdf)
+[![Résumé](https://raw.githubusercontent.com/mortenvester1/resume/master/build/resume-public.png)](https://raw.githubusercontent.com/mortenvester1/resume/master/build/resume-public.pdf)
 
 Get in contact with me on [LinkedIn](https://www.linkedin.com/in/mortenvesterpedersen/)
 
