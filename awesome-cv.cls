@@ -65,6 +65,8 @@
 % Needed to use a toolbox of programming tools
 \RequirePackage{etoolbox}
 % Needed to change line spacing in specific environment
+\RequirePackage[none]{hyphenat}
+% Needed to manage fonts
 \RequirePackage{setspace}
 % Needed to manage fonts
 \RequirePackage[quiet]{fontspec}
