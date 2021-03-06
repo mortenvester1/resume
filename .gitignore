@@ -30,3 +30,6 @@ tex/coverletter.tex
 tex/resume-private.tex
 tex/cv-private.tex
 tex/coverletter-private.tex
+build/resume-private.pdf
+build/cv-private.pdf
+build/coverletter-private.pdf
