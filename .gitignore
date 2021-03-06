@@ -1,0 +1,32 @@
+### TeX ###
+## Core latex/pdflatex auxiliary files:
+*.aux
+*.lof
+*.log
+*.lot
+*.fls
+*.out
+*.toc
+
+## Intermediate documents:
+*.dvi
+*-converted-to.*
+
+### Editor ###
+## Vim & Emacs temp files:
+.*sw[op]
+*~
+
+### Mac OS X ###
+## Mac OS X metadata files:
+*.DS_Store
+
+### Hide cv / coverletter ###
+tex/cv/
+tex/cv.tex
+tex/coverletter.tex
+
+### Hide private ###
+tex/resume-private.tex
+tex/cv-private.tex
+tex/coverletter-private.tex
