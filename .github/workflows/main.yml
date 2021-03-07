@@ -30,7 +30,7 @@ jobs:
 
       # Build PDF
       - name: install fonts
-        run: sudo tlmgr install sourcesanspro sourcesansprolight
+        run: tlmgr install sourcesanspro
 
       # Build PDF
       - name: make pdf
