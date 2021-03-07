@@ -31,5 +31,4 @@ tex/resume-private.tex
 tex/cv-private.tex
 tex/coverletter-private.tex
 
-build/*
-!*.gitkeep
+build
