@@ -26,8 +26,8 @@ jobs:
 
       - name: Install Imagemagick
         run: |
-          apt update
-          apt install -y imagemagick
+          sudo apt update
+          sudo apt install -y imagemagick
           sudo sed -i 's/rights="none" pattern="PDF"/rights="read|write" pattern="PDF"/g' /etc/ImageMagick-6/policy.xml
 
       # install reqs
