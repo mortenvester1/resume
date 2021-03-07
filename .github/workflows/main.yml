@@ -18,18 +18,17 @@ jobs:
   build:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
-    env:
-      RELEASE_FILENAME: resume
-      BUILD_DIR: build
-      INPUT_FLAGS: -density 150
-      OUTPUT_FLAGS: -background white -flatten -quality 100
+
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
 
-      - name: Create Build Dir
-        run: mkdir $BUILD_DIR
+      - name: Install Imagemagick
+        run: |
+          apt update
+          apt install -y imagemagick
+          sudo sed -i 's/rights="none" pattern="PDF"/rights="read|write" pattern="PDF"/g' /etc/ImageMagick-6/policy.xml
 
       # install reqs
       - name: Compile Latex
@@ -37,24 +36,27 @@ jobs:
         with:
           root_file: tex/resume-public.tex
           latexmk_use_xelatex: true
-          args: -output-directory=${{ BUILD_DIR }} -interaction=nonstopmode
+
+      - name: ls
+        run: ls
 
       - name: Create .png
         run: |
-          convert $(INPUT_FLAGS) $(BUILD_DIR)/resume-public.pdf $(OUTPUT_FLAGS) $(BUILD_DIR)/resume-public.png
+          convert -density 150 resume-public.pdf -background white -flatten -quality 100 resume-public.png
 
       - name: Rename
         run: |
-          mv $BUILD_DIR/resume-public.pdf $BUILD_DIR/$RELEASE_FILENAME.pdf
-          mv $BUILD_DIR/resume-public.png $BUILD_DIR/$RELEASE_FILENAME.png
+          mv resume-public.pdf resume-latest-mp.pdf
+          mv resume-public.png resume-latest-mp.png
 
       - name: Upload Release Asset
+        if: ${{ !env.ACT }}
         uses: softprops/action-gh-release@v1
         with:
           name: latest
           body: Latest version of public resume
           files: |
-            $BUILD_DIR/resume.pdf
-            $BUILD_DIR/resume.pdf
+            resume-latest-mp.pdf
+            resume-latest-mp.pdf
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
