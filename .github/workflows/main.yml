@@ -29,6 +29,10 @@ jobs:
         run: sudo apt-get install texlive-xetex
 
       # Build PDF
+      - name: install fonts
+        run: sudo tlmgr install sourcesanspro sourcesansprolight
+
+      # Build PDF
       - name: make pdf
         run: make resume-public.pdf
 
