@@ -29,7 +29,7 @@ jobs:
         with:
           root_file: tex/resume-public.tex
           latexmk_use_xelatex: true
-          args: -output-directory .
+          args: -output-directory=.
 
       - uses: actions/upload-artifact@v2
         with:
