@@ -1,5 +1,5 @@
 # Basic workflow to build latex and publish
-name: CI
+name: Build and Publish .pdf and .png
 
 # Controls when the action will run.
 on:
@@ -23,6 +23,10 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
+
+      # Build PDF
+      - name: install xelatex
+        run: sudo apt-get install texlive-xetex
 
       # Build PDF
       - name: make pdf
