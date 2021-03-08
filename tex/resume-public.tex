@@ -55,10 +55,13 @@
 % \photo[rectangle,edge,right]{./examples/profile}
 \name{Morten Vester}{Pedersen}
 \position{Data Scientist{\enskip\cdotp\enskip}Strategy Consultant}
-%\address{ xxxx, xxxx, xxxx, xxxx, xxxx }
-
-%\mobile{ xxxx xxxx xxxx xxxx }
-%\email{ xxxx@xxxx.com }
+\ifthenelse{\equal{\PUBLIC}{FALSE}}
+  {
+  \address{\ADDRESS}
+  \mobile{\PHONE}
+  \email{\EMAIL}
+  }
+  {}
 % \homepage{ }
 \github{mortenvester1}
 \linkedin{mortenvesterpedersen}

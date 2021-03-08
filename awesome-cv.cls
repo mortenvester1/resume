@@ -91,6 +91,27 @@
   pdfkeywords={}
 }
 
+\RequirePackage{xparse}
+\ExplSyntaxOn
+
+\NewDocumentCommand{\getenv}{om}
+ {
+  \sys_get_shell:nnN { kpsewhich ~ --var-value ~ #2 } { } \l_tmpa_tl
+  \tl_trim_spaces:N \l_tmpa_tl
+  \IfNoValueTF { #1 }
+   {
+    \tl_use:N \l_tmpa_tl
+   }
+   {
+    \tl_set_eq:NN #1 \l_tmpa_tl
+   }
+ }
+
+\ExplSyntaxOff
+\getenv[\ADDRESS]{ADDRESS}
+\getenv[\PHONE]{PHONE}
+\getenv[\EMAIL]{EMAIL}
+\getenv[\PUBLIC]{PUBLIC}
 
 %-------------------------------------------------------------------------------
 %                Configuration for directory locations
