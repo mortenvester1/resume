@@ -26,9 +26,8 @@ tex/cv/
 tex/cv.tex
 tex/coverletter.tex
 
-### Hide private ###
-tex/resume-private.tex
-tex/cv-private.tex
-tex/coverletter-private.tex
-
+# For local dev
 build
+.env
+.secrets
+Makefile

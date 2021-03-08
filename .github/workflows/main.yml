@@ -12,55 +12,51 @@ on:
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
-# A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  # This workflow contains a single job called "build"
   build:
-    # The type of runner that the job will run on
     runs-on: ubuntu-latest
 
     env:
       PUBLIC: ${{ secrets.PUBLIC }}
-    # Steps represent a sequence of tasks that will be executed as part of the job
+
     steps:
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
 
-      # - name: Install Imagemagick
-      #   run: |
-      #     sudo apt update
-      #     sudo apt install -y imagemagick
-      #     sudo apt install -y ghostscript
-      #     sudo sed -i 's/rights="none" pattern="PDF"/rights="read|write" pattern="PDF"/g' /etc/ImageMagick-6/policy.xml
-
-      - name:
+      - name: Install Imagemagick
         run: |
+          sudo apt update
+          sudo apt install -y imagemagick
+          sudo apt install -y ghostscript
+          sudo sed -i 's/rights="none" pattern="PDF"/rights="read|write" pattern="PDF"/g' /etc/ImageMagick-6/policy.xml
+
+      - name: Show PUBLIC
+        run:
           echo $PUBLIC
 
-      # # install reqs
-      # - name: Compile Latex
-      #   uses: xu-cheng/latex-action@v2
-      #   with:
-      #     root_file: tex/resume-public.tex
-      #     latexmk_use_xelatex: true
-      #
-      # - name: Create .png
-      #   run: |
-      #     convert -density 150 resume-public.pdf -background white -flatten -quality 100 resume-public.png
-      #
-      # - name: Rename
-      #   run: |
-      #     mv resume-public.pdf resume-latest-mp.pdf
-      #     mv resume-public.png resume-latest-mp.png
-      #
-      # - name: Upload Release Asset
-      #   if: ${{ !env.ACT }}
-      #   uses: softprops/action-gh-release@v1
-      #   with:
-      #     name: latest
-      #     body: Latest version of public resume
-      #     files: |
-      #       resume-latest-mp.pdf
-      #       resume-latest-mp.pdf
-      #   env:
-      #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      # install reqs
+      - name: Compile Latex
+        uses: xu-cheng/latex-action@v2
+        with:
+          root_file: tex/resume-public.tex
+          latexmk_use_xelatex: true
+
+      - name: Create .png
+        run: |
+          convert -density 150 resume-public.pdf -background white -flatten -quality 100 resume-public.png
+
+      - name: Rename
+        run: |
+          mv resume-public.pdf resume-latest-mp.pdf
+          mv resume-public.png resume-latest-mp.png
+
+      - name: Upload Release Asset
+        if: ${{ !env.ACT }}
+        uses: softprops/action-gh-release@v1
+        with:
+          name: latest
+          body: Latest version of public resume
+          files: |
+            resume-latest-mp.pdf
+            resume-latest-mp.png
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
