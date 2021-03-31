@@ -51,7 +51,7 @@ jobs:
 
       - name: Upload Release Asset
         if: ${{ !env.ACT }}
-        uses: softprops/action-gh-release@v1
+        uses: softprops/action-gh-release@v0.1.5
         with:
           name: latest
           tag_name: latest
