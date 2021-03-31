@@ -49,9 +49,19 @@ jobs:
           mv resume-public.pdf resume-latest-mp.pdf
           mv resume-public.png resume-latest-mp.png
 
+      - name: Delete old release assets
+        if: ${{ !env.ACT }}
+        uses: mknejp/delete-release-assets@v1
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          tag: latest
+          assets: |
+            resume-latest-mp.pdf
+            resume-latest-mp.png
+
       - name: Upload Release Asset
         if: ${{ !env.ACT }}
-        uses: softprops/action-gh-release@v0.1.5
+        uses: softprops/action-gh-release@v1
         with:
           name: latest
           tag_name: latest
