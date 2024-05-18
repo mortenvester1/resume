@@ -8,56 +8,78 @@
 %	CONTENT
 %-------------------------------------------------------------------------------
 \begin{cventries}
+%---------------------------------------------------------
+\cventrywide
+  {Rokt} % Organization
+  {Staff Machine Learning Engineer - Ads Performance} % Job title
+  {New York, US} % Location
+  {Oct 2023 - Current} % Date(s)
+  {
+    \begin{cvitems} % Description(s) of tasks/responsibilities
+      \item {Wrote and execute plan for deploying a bidding service responsible for supplying bids and other machine learning output for all auction participants. The service is written in Go and uses GRPC. Deployed to EKS in 4 regions using Helm, Argo Rollouts, and Terraform for cloud infrastructure. }
+      \item {Designed and implemented runtime configuration stucture for our ML pipelines using Pydantic. Config supports data sampling, feature store integration, and TFX transform configuration, and deployment information. }
+    \end{cvitems}
+  }
 
 %---------------------------------------------------------
-\cventry
-  {Senior ML Ops Engineer} % Job title % Organization
-  {GSK R\&D}
-  {New York, United States} % Location
+\cventrywide
+  {Senior Machine Learning Engineer - Ads ML} % Job title
+  {}
+  {}
+  {Aug 2022 - Oct 2023} % Date(s)
+  {
+    \begin{cvitems} % Description(s) of tasks/responsibilities
+      \item {Refactored several machine learning pipelines responsible for pacing advertiser spend over a given period. Adopted a mini-batch approach. This allowed us onboard ~200 campaigns, roughly 50\% of campaigns at the time, in two months. }
+      \item {Performed migration of about 20 machine learning workloads to a new cluster as part of Kubernetes and Kubeflow upgrades. Also moved several pipelines away from using AWS redshift to PySpark. }
+      \item {Reduced compute, storage, and observability costs of multiple machine learning workloads by more than \$150K per year. Optimized Spark queries with filters, persistence, and checkpointing. Improved cluster bin-packing by adjusting resource requests, limits and implement mini-batching in workloads. Suppressed C library output to stdout caused by the Python package Prophet in order to reduce log ingestion and indexing costs. }
+    \end{cvitems}
+  }
+
+%---------------------------------------------------------
+\cventrywide
+  {GSK R\&D} % Organization
+  {Senior ML Ops Engineer - ML Platform} % Job title
+  {New York, US} % Location
   {Sep 2021 - Current} % Date(s)
   {
     \begin{cvitems} % Description(s) of tasks/responsibilities
-      \item { Developed a Python package and CLI to orchestrate and monitor jobs across AKS and on-prem HPC clusters. Worked directly with research teams on UAT and adoption. }
-      \item { Standardized Kubernetes deployments in CI/CD pipeline templates using Helm. Developed Helm charts for realtime- and batch-deployments of machine learning models, and remote development environments. }
-      \item { Developed and deployed RESTful API's with FastAPI and Uvicorn to provide a uniform API for Slurm jobs and Argo Workflows. Containerized application with Docker using BuildKit and multistaging. Deployed to an on-prem Kubernetes cluster with Helm and CI/CD pipeline. }
-      \item { Created python libraries to reduce code duplication and improve reuse across platform products. Centralized custom types and datamodels with Pydantic. Developed utility packages to standardize logging, parsing of logs, and interactions with Docker images. }
-      \item { Spearheaded documentation standards by defining minimum requirements for products lines and products. Used a mixture of Sphinx, Github Pages and Confluence for delivery. }
+      \item { Created Python libraries to reduce code duplication and improve reuse across platform components. Centralized custom types and datamodels with Pydantic. Developed a Python package and CLI to orchestrate and monitor jobs across AKS and on-prem HPC clusters. Worked directly with research teams on UAT and adoption. }
+      \item { Standardized Kubernetes deployments in CI/CD pipeline templates using Helm. Developed Helm charts for realtime and batch-deployments of machine learning models, and remote development environments. }
+      \item { Developed and deployed REST API's with FastAPI to provide a uniform API for Slurm jobs and Argo Workflows. Deployed to an on-prem Kubernetes cluster using Docker, Helm, and Azure Pipelines. }
     \end{cvitems}
   }
 %---------------------------------------------------------
-  \cventry
-    {Machine Learning Engineer \& Strategy Consultant} % Job title % Organization
-    {IBM Services}
-    {New York, United States} % Location
+  \cventrywide
+    {IBM Services - Industrial}  % Organization
+    {Machine Learning Engineer \& Strategy Consultant} % Job title
+    {New York, US} % Location
     {Feb 2019 - Aug 2021} % Date(s)
     {
       \begin{cvitems} % Description(s) of tasks/responsibilities
-        \item {Lead the implementation of a web application to generate cost and time-estimates for drilling and completing new oil/gas wells. Developed serverless backend services in Python, data ingestion pipeline with spark, and CI/CD pipeline using Ansible and Azure Pipelines.}
-        \item {Designed and implemented a machine learning pipeline using a many-models-pattern to perform parallel training and prediction for estimating the ultimate recovery and decline curves for thousands of oil and gas wells.}
-        \item {Lead implementation of machine learning models for entity matching problems with a client in the credit industry. Operationalized models in Cloudera Data Science Workbench. Built active learning pipeline to continually collect training data and auditing of labelling. }
-        \item {Worked with IBM's external clients to explore data-sources, designed and implemented data pipelines, developed machine learning solutions, deployed solutions in the cloud.}
-        \item {Mentored and coached junior developers and data scientists.}
+        \item {Lead the implementation of a web-app to generate cost and time-estimates for drilling and completing new oil wells. Developed backend services in Python, data ingestion pipeline with PySpark, and CI/CD pipelines in Azure.}
+        \item {Implemented a machine learning pipeline using a many-models-pattern to perform parallel training and prediction in order to estimate the ultimate recovery and decline curves for thousands of oil and gas wells.}
+        \item {Lead implementation of machine learning models for entity matching problems with a client in the credit industry. Built active learning pipeline to continually collect training data and auditing of labelling. }
       \end{cvitems}
     }
 
 %---------------------------------------------------------
-  \cventry
-    {Data Scientist - Machine Learning Engineer} % Job title
-    {IBM Analytics} % Organization
-    {New York, United States} % Location
-    {Jan 2018 - Feb 2019} %
-    {
-      \begin{cvitems} % Description(s) of tasks/responsibilities
-        \item {Worked with external clients on formulating data science projects solving business problems in various industries, through data-discovery and brainstorming sessions.}
-        \item {Through a period of up to 90 days, I helped deliver a minimal viable product, encompassing a full pipeline from data ingestion and wrangling to a deployed model.}
-      \end{cvitems}
-    }
+  %\cventrywide
+  %  {IBM Analytics} % Organization
+  %  {Data Scientist - Machine Learning Engineer} % Job title
+  %  {New York, US} % Location
+  %  {Jan 2018 - Feb 2019} %
+  %  {
+  %    \begin{cvitems} % Description(s) of tasks/responsibilities
+  %      \item {Worked with external clients on formulating data science projects solving business problems in various industries, through data-discovery and brainstorming sessions.}
+  %      \item {Through a period of up to 90 days, I helped deliver a minimal viable product, encompassing a full pipeline from data ingestion and wrangling to a deployed model.}
+  %    \end{cvitems}
+  %  }
 
 % %---------------------------------------------------------
-%   \cventry
-%     {Data Scientist} % Job title
+%   \cventrywide
 %     {AOL Inc.} % Organization
-%     {New York, United States} % Location
+%     {Data Scientist} % Job title
+%     {New York, US} % Location
 %     {Jun 2017 - Dec 2017} %
 %     {
 %       \begin{cvitems} % Description(s) of tasks/responsibilities
@@ -68,10 +90,10 @@
 %
 % %---------------------------------------------------------
 %
-% \cventry
-%   {Instructor} % Job title
+% \cventrywide
 %   {Center of Mathematical Talent, Courant Institute, NYU} % Organization
-%   {New York, United States} % Location
+%   {Instructor} % Job title
+%   {New York, US} % Location
 %   {Aug 2016 - May 2017} %
 %   {
 %     \begin{cvitems} % Description(s) of tasks/responsibilities
@@ -81,10 +103,10 @@
 %
 % %---------------------------------------------------------
 %
-% \cventry
-%   {Teaching Assistant} % Job title
+% \cventrywide
 %   {Department of Computer Science, University of Copenhagen} % Organization
-%   {Copenhagen, Denmark} % Location
+%   {Teaching Assistant} % Job title
+%   {Copenhagen, DK} % Location
 %   {Feb 2015 - Jun 2015} %
 %   {
 %     \begin{cvitems} % Description(s) of tasks/responsibilities
@@ -96,10 +118,10 @@
 %
 % %---------------------------------------------------------
 %
-% \cventry
-%   {Research Assistant} % Job title
+% \cventrywide
 %   {The Image Group, University of Copenhagen} % Organization
-%   {Copenhagen, Denmark} % Location
+%   {Research Assistant} % Job title
+%   {Copenhagen, DK} % Location
 %   {Jul 2014 - Jul 2015} %
 %   {
 %     \begin{cvitems} % Description(s) of tasks/responsibilities
@@ -111,10 +133,10 @@
 %
 % %---------------------------------------------------------
 %
-% \cventry
-%   {Mentor} % Job title
+% \cventrywide
 %   {Department of Computer Science, University of Copenhagen} % Organization
-%   {Copenhagen, Denmark} % Location
+%   {Mentor} % Job title
+%   {Copenhagen, DK} % Location
 %   {Jun 2013 - Jun 2015} %
 %   {
 %     \begin{cvitems} % Description(s) of tasks/responsibilities
