@@ -11,13 +11,15 @@
 %---------------------------------------------------------
 \cventrywide
   {Rokt} % Organization
-  {Staff Machine Learning Engineer - Ads Performance} % Job title
+  {Staff Machine Learning Engineer - Advertiser Success} % Job title
   {New York} % Location
   {Oct 2023 - Current} % Date(s)
   {
     \begin{cvitems} % Description(s) of tasks/responsibilities
-      \item {Wrote and execute plan for deploying a bidding service responsible for supplying bids and other machine learning output for all auction participants. The service is written in Go and uses GRPC. Deployed to EKS in 4 regions using Helm, Argo Rollouts, and Terraform for cloud infrastructure. }
-      \item {Designed and implemented runtime configuration stucture for our ML pipelines using Pydantic. Config supports data sampling, feature store integration, and TFX transform configuration, and deployment information. }
+      \item {Wrote and executed plan for deploying a realtime service responsible for supplying bids and other machine learning outputs for all candidates in Rokt's auction system. The service was written in Go and uses GRPC. Deployed to EKS in 4 regions using Helm, Argo Rollouts, and Terraform for cloud infrastructure.}
+      \item {Built the orchestration and ML backend of Rokt's Lookalike Audience solution. Adopted PySpark for batch inference job, decreasing runtime from ~1h to ~15m. Optimized several other spark jobs reducing time to generate audience from 3h30m to 1h30m by optimizing PySpark jobs. Led to increased conversion rates by 6\% across +40 accounts.}
+      \item {Led cross-team coordination and implementation of changes to conversion attribution at Rokt. Implemented changes to Rokt's bidding system and defined new interface between the bidding system and the auction system.}
+      %\item {Designed and implemented runtime configuration stucture for our ML pipelines using Pydantic. Config supports data sampling, feature store integration, and TFX transform configuration, and deployment information. }
     \end{cvitems}
   }
 
@@ -31,7 +33,7 @@
     \begin{cvitems} % Description(s) of tasks/responsibilities
       \item {Refactored several machine learning pipelines responsible for pacing advertiser spend over a given period. Adopted a mini-batch approach. This allowed us onboard ~200 campaigns, roughly 50\% of campaigns at the time, in two months. }
       \item {Performed migration of about 20 machine learning workloads to a new cluster as part of Kubernetes and Kubeflow upgrades. Also moved several pipelines away from using AWS redshift to PySpark. }
-      \item {Reduced compute, storage, and observability costs of multiple machine learning workloads by more than \$150K per year. Optimized Spark queries with filters, persistence, and checkpointing. Improved cluster bin-packing by adjusting resource requests, limits and implement mini-batching in workloads. Suppressed C library output to stdout caused by the Python package Prophet in order to reduce log ingestion and indexing costs. }
+      \item {Reduced compute, storage, and observability costs of multiple machine learning workloads by more than \$150K per year. Optimized Spark queries with filters, persistence, and checkpointing. Improved cluster bin-packing by adjusting resource requests, limits and implement mini-batching in workloads. }
     \end{cvitems}
   }
 
@@ -58,7 +60,7 @@
       \begin{cvitems} % Description(s) of tasks/responsibilities
         \item {Lead the implementation of a web-app to generate cost and time-estimates for drilling and completing new oil wells. Developed backend services in Python, data ingestion pipeline with PySpark, and CI/CD pipelines in Azure.}
         \item {Implemented a machine learning pipeline using a many-models-pattern to perform parallel training and prediction in order to estimate the ultimate recovery and decline curves for thousands of oil and gas wells.}
-        \item {Lead implementation of machine learning models for entity matching problems with a client in the credit industry. Built active learning pipeline to continually collect training data and auditing of labelling. }
+        %\item {Lead implementation of machine learning models for entity matching problems with a client in the credit industry. Built active learning pipeline to continually collect training data and auditing of labelling. }
       \end{cvitems}
     }
 
